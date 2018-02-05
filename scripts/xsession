@@ -1,6 +1,7 @@
 #!/bin/bash
 
 xrandr --orientation left
+xinput set-prop "ILITEK Multi-Touch-V" "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 
 # Import variables
 . /home/kiosk/.kiosk/screensaver.cfg
