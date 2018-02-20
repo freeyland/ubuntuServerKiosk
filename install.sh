@@ -260,6 +260,21 @@ read -p "Press any key to continue... " -n1 -s
 # 	echo -e "${blue}Crontab already installed. Skipping...${NC}"
 # fi
 
+echo -e "${red}Installing inocron...${NC}"
+if [ "$crontab_installed" == 0 ]
+then
+	apt-get -q=2 install --no-install-recommends inocron > /dev/null
+	wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/incron.allow -O /etc/incron.allow
+	echo "/home/kiosk/.kiosk/browser.cfg IN_MODIFY sudo reboot" > incron
+	#here we contactenate (cat) the current content from incrontab with the content of previously created incron file
+	incrontab -l | cat - incron | incrontab -
+	rm -rf incron
+	sed -i -e 's/crontab_installed=0/crontab_installed=1/g' stages.cfg
+	echo -e "${green}Done!${NC}"
+else
+	echo -e "${blue}Crontab already installed. Skipping...${NC}"
+fi
+
 
 # Set correct user and group permissions for /home/kiosk
 echo -e "${red}Set correct user and group permissions for ${blue}/home/kiosk${red}...${NC}"
