@@ -53,9 +53,9 @@ then
 # " /etc/apt/sources.list
 
 # Refresh
-sudo apt-get update        # Fetches the list of available updates
-sudo apt-get dist-upgrade  # Installs updates (new ones)
-sudo apt-get upgrade       # Strictly upgrades the current packages
+sudo apt-get -y update        # Fetches the list of available updates
+sudo apt-get -y dist-upgrade  # Installs updates (new ones)
+sudo apt-get -y upgrade       # Strictly upgrades the current packages
 
 
 # Clean
