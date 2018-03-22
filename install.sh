@@ -301,7 +301,7 @@ wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scr
 # Choose kiosk name
 kiosk_name=""
 while [[ ! $kiosk_name =~ ^[A-Za-z0-9]+$ ]]; do
-    echo -e "${green}Kiosk name (e.g. kiosk1):${NC}"
+    echo -e "${green}Provide kiosk name (e.g. kiosk1):${NC}"
     read kiosk_name
 done
 
@@ -321,8 +321,8 @@ echo -e "${green}Reboot?${NC}"
 echo "Do you wish to reboot?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) make install; break;;
-        No ) exit;;
+        Yes ) make install; break;
+        No ) exit;
     esac
 done;;
 esac
