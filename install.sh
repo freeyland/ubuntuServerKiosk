@@ -45,17 +45,18 @@ echo -e "${red}Installing operating system updates ${blue}(this may take a while
 if [ "$updates_installed" == 0 ]
 then
 # Use mirror method
-sed -i "1i \
-deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION main restricted universe multiverse\n\
-deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-updates main restricted universe multiverse\n\
-deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-backports main restricted universe multiverse\n\
-deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-security main restricted universe multiverse\n\
-" /etc/apt/sources.list
+# sed -i "1i \
+# deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION main restricted universe multiverse\n\
+# deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-updates main restricted universe multiverse\n\
+# deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-backports main restricted universe multiverse\n\
+# deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-security main restricted universe multiverse\n\
+# " /etc/apt/sources.list
 
 # Refresh
 sudo apt-get update        # Fetches the list of available updates
-sudo apt-get upgrade       # Strictly upgrades the current packages
 sudo apt-get dist-upgrade  # Installs updates (new ones)
+sudo apt-get upgrade       # Strictly upgrades the current packages
+
 
 # Clean
 apt-get -q=2 autoremove
