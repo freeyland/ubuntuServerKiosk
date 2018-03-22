@@ -6,10 +6,10 @@ This script install Flowtech Kiosk Player (Flowplayer)
 
 <code>
 wget https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/install.sh
-</code>
+</code><br>
 <code> 
 sudo chmod +x install.sh
-</code>
+</code><br>
 <code>
 sudo ./install.sh
-</code>
+</code><br>
