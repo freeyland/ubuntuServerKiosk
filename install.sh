@@ -53,12 +53,14 @@ deb mirror://mirrors.ubuntu.com/mirrors.txt $VERSION-security main restricted un
 " /etc/apt/sources.list
 
 # Refresh
-apt-get -q=2 update
+apt-get update
 
 # Clean
 apt-get -q=2 autoremove
 apt-get -q=2 clean
 sed -i -e 's/updates_installed=0/updates_installed=1/g' stages.cfg
+clear
+echo -e "${red}Installing operating system updates... ${NC}"
 echo -e "${green}Done!${NC}"
 else
 	echo -e "${blue}Updates already installed. Skipping...${NC}"
