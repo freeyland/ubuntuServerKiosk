@@ -69,7 +69,7 @@ else
 	echo -e "${blue}Updates already installed. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 echo -e "${red}Installing a graphical user interface...${NC}"
 if [ "$xorg_installed" == 0 ]
@@ -85,7 +85,7 @@ apt-get -q=2 install --no-install-recommends openssh-server > /dev/null
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/sshd_config -O /etc/ssh/sshd_config
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Hide Cursor
 apt-get -q=2 install --no-install-recommends unclutter > /dev/null
@@ -95,7 +95,7 @@ else
 	echo -e "${blue}Xorg already installed. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 
 # Prevent sleeping for inactivity
@@ -110,7 +110,7 @@ else
 	echo -e "${blue}Prevent sleeping already done. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 
 echo -e "${red}Disabling root recovery mode...${NC}"
@@ -128,7 +128,7 @@ else
 	echo -e "${blue}Root recovery already disabled. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 echo -e "${red}Creating kiosk user...${NC}"
 if [ "$kiosk_created" == 0 ]
@@ -140,7 +140,7 @@ else
 	echo -e "${blue}Kiosk already created. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Configure kiosk autologin
 echo -e "${red}Configuring kiosk autologin...${NC}"
@@ -156,7 +156,7 @@ else
 fi
 	
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 
 # Install Chromium browser
@@ -177,7 +177,7 @@ else
 fi
 
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Kiosk scripts
 echo -e "${red}Creating Kiosk Scripts...${NC}"
@@ -185,7 +185,7 @@ if [ "$kiosk_scripts" == 0 ]
 then
 mkdir /home/kiosk/.kiosk
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Create other kiosk scripts
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/browser.cfg -O /home/kiosk/.kiosk/browser.cfg
@@ -203,7 +203,7 @@ else
 fi
 
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 
 echo -e "${red}Installing touchscreen support...${NC}"
@@ -217,7 +217,7 @@ else
 fi
 
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 echo -e "${red}Installing audio...${NC}"
 if [ "$audio_installed" == 0 ]
@@ -232,7 +232,7 @@ else
 	echo -e "${blue}Audio already installed. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 echo -e "${red}Installing 3rd party software...${NC}"
 if [ "$additional_software_installed" == 0 ]
@@ -249,7 +249,7 @@ else
 	echo -e "${blue}3rd party software already installed. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Crontab for fixing hdmi sound mute problem
 # if [ "$crontab_installed" == 0 ]
@@ -293,7 +293,7 @@ else
 fi
 
 
-read -p "Press any key to continue... " -n1 -s
+read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Create xsession
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/xsession -O /home/kiosk/.xsession
