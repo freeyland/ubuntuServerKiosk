@@ -133,7 +133,7 @@ read -p "Press any key to continue... ${NC}" -n1 -s
 echo -e "${red}Creating kiosk user...${NC}"
 if [ "$kiosk_created" == 0 ]
 then
-useradd kiosk -m -d /home/kiosk -p `openssl passwd -crypt K10sk201` -s /bin/bash
+useradd kiosk -m -d /home/kiosk -p `openssl passwd -crypt K10sk` -s /bin/bash
 sed -i -e 's/kiosk_created=0/kiosk_created=1/g' stages.cfg
 echo -e "${green}Done!${NC}"
 else
