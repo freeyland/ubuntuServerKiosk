@@ -33,7 +33,8 @@ crontab_installed=0
 prevent_sleeping=0
 ossh_installed=0
 kiosk_permissions=0
-immagemagick_installed=0' > stages.cfg
+immagemagick_installed=0
+openvpn_installed=0' > stages.cfg
 fi
 
 # Import stages config
@@ -241,6 +242,16 @@ sed -i -e 's/immagemagick_installed=0/immagemagick_installed=1/g' stages.cfg
 echo -e "\n${green}Done!${NC}"
 else
 	echo -e "${blue}ImageMagick already installed. Skipping...${NC}"
+fi
+
+echo -e "${red}Installing OpenVPN...${NC}"
+if [ "$openvpn_installed" == 0 ]
+then
+apt-get -q=2 install --no-install-recommends imagemagick > /dev/null
+sed -i -e 's/openvpn_installed=0/openvpn_installed=1/g' stages.cfg
+echo -e "\n${green}Done!${NC}"
+else
+	echo -e "${blue}OpenVPN already installed. Skipping...${NC}"
 fi
 
 read -p "Press any key to continue... ${NC}" -n1 -s
