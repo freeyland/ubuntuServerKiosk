@@ -193,7 +193,7 @@ read -p "Press any key to continue... ${NC}" -n1 -s
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/browser.cfg -O /home/kiosk/.kiosk/browser.cfg
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/browser_killer.sh -O /home/kiosk/.kiosk/browser_killer.sh
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/browser_switches.cfg -O /home/kiosk/.kiosk/browser_switches.cfg
-
+chmod 777 /home/kiosk/.kiosk/browser.cfg
 
 # Create browser killer
 apt-get -q=2 install --no-install-recommends xprintidle > /dev/null
