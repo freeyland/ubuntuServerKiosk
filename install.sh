@@ -309,6 +309,7 @@ if [ "$kiosk_permissions" == 0 ]
 then
 chown -R kiosk.kiosk /home/kiosk/
 sed -i -e 's/kiosk_permissions=0/kiosk_permissions=1/g' stages.cfg
+wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/sudoers -O /etc/sudoers
 echo -e "${green}Done!${NC}"
 else
 	echo -e "${blue}Permissions already set. Skipping...${NC}"
