@@ -1,6 +1,9 @@
 #!/bin/bash
 
-xrandr --orientation left
+#xrandr --orientation left
+xrandr --output eDP-1 --off  -d :0
+xrandr --output HDMI-1 --rotate left -d :0
+
 xinput set-prop "ILITEK Multi-Touch-V" "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 
 # Import variables
