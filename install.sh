@@ -158,7 +158,7 @@ else
 fi
 	
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue... " -n1 -s
 
 
 # Install Chromium browser
@@ -179,7 +179,7 @@ else
 fi
 
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue..." -n1 -s
 
 # Kiosk scripts
 echo -e "${red}Creating Kiosk Scripts...${NC}"
@@ -187,7 +187,7 @@ if [ "$kiosk_scripts" == 0 ]
 then
 mkdir /home/kiosk/.kiosk
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue..." -n1 -s
 
 # Create other kiosk scripts
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/browser.cfg -O /home/kiosk/.kiosk/browser.cfg
@@ -205,7 +205,7 @@ else
 fi
 
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue... " -n1 -s
 
 
 echo -e "${red}Installing touchscreen support...${NC}"
@@ -219,7 +219,7 @@ else
 fi
 
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue... " -n1 -s
 
 echo -e "${red}Installing audio...${NC}"
 if [ "$audio_installed" == 0 ]
@@ -254,7 +254,7 @@ else
 	echo -e "${blue}OpenVPN already installed. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue..." -n1 -s
 
 echo -e "${red}Installing 3rd party software...${NC}"
 if [ "$additional_software_installed" == 0 ]
@@ -271,7 +271,7 @@ else
 	echo -e "${blue}3rd party software already installed. Skipping...${NC}"
 fi
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue..." -n1 -s
 
 # Crontab for fixing hdmi sound mute problem
 # if [ "$crontab_installed" == 0 ]
@@ -316,7 +316,7 @@ else
 fi
 
 
-read -p "Press any key to continue... ${NC}" -n1 -s
+read -p "Press any key to continue..." -n1 -s
 
 # Create xsession
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/xsession -O /home/kiosk/.xsession
