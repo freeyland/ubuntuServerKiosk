@@ -91,6 +91,10 @@ read -p "Press any key to continue... ${NC}" -n1 -s
 
 # Hide Cursor
 apt-get -q=2 install --no-install-recommends unclutter > /dev/null
+# Install monit
+apt-get -q=2 install --no-install-recommends monit > /dev/null
+
+
 sed -i -e 's/xorg_installed=0/xorg_installed=1/g' stages.cfg
 echo -e "\n${green}Done!${NC}"
 else
@@ -191,7 +195,8 @@ read -p "Press any key to continue..." -n1 -s
 
 # Create other kiosk scripts
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/browser.cfg -O /home/kiosk/.kiosk/browser.cfg
-wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/browser_killer.sh -O /home/kiosk/.kiosk/browser_killer.sh
+wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/scripts/killchromium.sh -O /home/kiosk/killchromium.sh
+wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/monitrc -O /etc/monit/monitrc
 wget -q https://raw.githubusercontent.com/freeyland/ubuntuServerKiosk/master/configs/browser_switches.cfg -O /home/kiosk/.kiosk/browser_switches.cfg
 chmod 777 /home/kiosk/.kiosk/browser.cfg
 
