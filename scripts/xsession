@@ -7,7 +7,7 @@ xrandr --output HDMI-1 --rotate left -d :0
 xinput set-prop "ILITEK Multi-Touch-V" "Coordinate Transformation Matrix" 0 -1 1 1 0 0 0 0 1
 
 # Import variables
-website=$(cat /home/kiosk/.kiosk/browser.cfg)
+#website=$(cat /home/kiosk/.kiosk/browser.cfg)
 
 # Uncomment to run touchscreen calibration on next boot
 #xterm xinput_calibrator
@@ -27,7 +27,7 @@ matchbox-window-manager -use_titlebar no &
 # Relaunch browser if closed
 while true; do
 	export DISPLAY=:0
-	chromium-browser --kiosk --disable-infobars --noerrdialogs --disable-session-crashed-bubble --disable-pinch --enable-remote-extensions --disable-save-password-bubble --touch-events=enabled --disable-gesture-typing --overscroll-history-navigation=0 --disable-translate-new-ux --agc-startup-min-volume=100 $website
+	chromium-browser --kiosk --disable-infobars --noerrdialogs --disable-session-crashed-bubble --disable-pinch --enable-remote-extensions --disable-save-password-bubble --touch-events=enabled --disable-gesture-typing --overscroll-history-navigation=0 --disable-translate-new-ux --agc-startup-min-volume=100 $(cat /home/kiosk/.kiosk/browser.cfg)
 	sleep 5s
 done
 
